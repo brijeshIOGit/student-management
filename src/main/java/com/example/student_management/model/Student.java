@@ -19,14 +19,14 @@ public class Student {
     @NotBlank(message = "Name cannot be empty")
     private String name;
     @NotBlank(message = "Email cannot be empty")
-    @Email(message = "Invalid email format") 
+    @Email(message = "Invalid email format")
     private String email;
     private String phone;
     private String address;
     @Min(value = 18, message = "Student must be at least 18 years old")
     private int age;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
 
